@@ -22,9 +22,9 @@ class _MyAppState extends State<MyApp> {
   bool _isPlaying = false;
   bool _useSpeaker = false;
 
-  StreamSubscription _recorderStatus;
-  StreamSubscription _playerStatus;
-  StreamSubscription _audioStream;
+  late StreamSubscription _recorderStatus;
+  late StreamSubscription _playerStatus;
+  late StreamSubscription _audioStream;
 
   @override
   void initState() {
@@ -34,9 +34,9 @@ class _MyAppState extends State<MyApp> {
 
   @override
   void dispose() {
-    _recorderStatus?.cancel();
-    _playerStatus?.cancel();
-    _audioStream?.cancel();
+    _recorderStatus.cancel();
+    _playerStatus.cancel();
+    _audioStream.cancel();
     super.dispose();
   }
 

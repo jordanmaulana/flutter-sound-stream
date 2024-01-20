@@ -23,9 +23,9 @@ class _MyAppState extends State<MyApp> {
   bool _isRecording = false;
   bool _isPlaying = false;
 
-  StreamSubscription _recorderStatus;
-  StreamSubscription _playerStatus;
-  StreamSubscription _audioStream;
+  late StreamSubscription _recorderStatus;
+  late StreamSubscription _playerStatus;
+  late StreamSubscription _audioStream;
 
   final channel = IOWebSocketChannel.connect(_SERVER_URL);
 
@@ -37,9 +37,9 @@ class _MyAppState extends State<MyApp> {
 
   @override
   void dispose() {
-    _recorderStatus?.cancel();
-    _playerStatus?.cancel();
-    _audioStream?.cancel();
+    _recorderStatus.cancel();
+    _playerStatus.cancel();
+    _audioStream.cancel();
     super.dispose();
   }
 
